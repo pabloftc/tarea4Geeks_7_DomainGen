@@ -2,10 +2,25 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+  let pronouns = ["the", "our"];
+  let adjectives = ["great", "big"];
+  let nouns = ["jogger", "racoon"];
+  let suffixes = [".com", ".net", ".us", ".io"];
+
+  function domain(arr1, arr2, arr3, arr4) {
+    let x = [];
+    for (let pron of arr1) {
+      for (let adj of arr2) {
+        for (let noun of arr3) {
+          for (let suf of arr4) {
+            x.push(pron + adj + noun + suf);
+          }
+        }
+      }
+    }
+    return x;
+  }
+
+  console.log(domain(pronouns, adjectives, nouns, suffixes));
 };
